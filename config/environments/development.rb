@@ -22,7 +22,7 @@ Prelaunchr::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -45,6 +45,17 @@ Prelaunchr::Application.configure do
 
 
   # For mailer configs
-  config.action_mailer.perform_deliveries = false
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+
+  ActionMailer::Base.smtp_settings = {
+   :user_name => 'hairdu',
+    :password => 'coolfm02',
+    :domain => 'http://hairduapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
 end

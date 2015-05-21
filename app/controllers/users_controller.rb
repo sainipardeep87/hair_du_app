@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        debugger
+       
         # Get user to see if they have already signed up
         @user = User.find_by_email(params[:user][:email]);
             

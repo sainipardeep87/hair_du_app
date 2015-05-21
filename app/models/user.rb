@@ -52,6 +52,6 @@ class User < ActiveRecord::Base
     end
 
     def send_welcome_email
-        UserMailer.delay.signup_email(self)
+        UserMailer.signup_email(self).deliver
     end
 end

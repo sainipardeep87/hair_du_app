@@ -11,6 +11,7 @@ gem 'activeadmin'
 gem 'execjs'
 gem 'therubyracer'
 gem 'mysql2'
+# gem 'sendgrid-ruby'
 
 
 # Gems used only for assets and not required
