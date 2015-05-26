@@ -10,7 +10,7 @@ gem 'pg'
 gem 'activeadmin'
 gem 'execjs'
 gem 'therubyracer'
-gem 'mysql2'
+
 # gem 'sendgrid-ruby'
 
 
