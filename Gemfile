@@ -10,6 +10,7 @@ gem 'pg'
 gem 'activeadmin'
 gem 'execjs'
 gem 'therubyracer'
+gem "font-awesome-rails"
 
 # gem 'sendgrid-ruby'
 

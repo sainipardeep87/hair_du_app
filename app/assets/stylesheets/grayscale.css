@@ -54,19 +54,18 @@ a:focus {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #111143;
 }
-.navbar-custom .navbar-brand {
-  font-weight: 700;
+.navbar-custom .navbar-brand img {
+  height: 90px;
+  margin-top: -30px;
+  padding: 0;
 }
-.navbar-custom .navbar-brand:focus {
-  outline: none;
-}
-.navbar-custom .navbar-brand .navbar-toggle {
+.navbar-custom .navbar-brand img .navbar-toggle {
   padding: 4px 6px;
   font-size: 16px;
   color: white;
 }
-.navbar-custom .navbar-brand .navbar-toggle:focus,
-.navbar-custom .navbar-brand .navbar-toggle:active {
+.navbar-custom .navbar-brand img .navbar-toggle:focus,
+.navbar-custom .navbar-brand img .navbar-toggle:active {
   outline: none;
 }
 .navbar-custom a {
@@ -119,7 +118,7 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+  background: url(..//assets/intro-bg.jpg) no-repeat bottom center scroll;
   background-color: #111143;
   -webkit-background-size: cover;
   -moz-background-size: cover;
