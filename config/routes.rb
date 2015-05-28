@@ -12,6 +12,10 @@ Prelaunchr::Application.routes.draw do
 
   match 'privacy-policy' => 'users#policy'
 
+  match 'users/stylist' => 'users#stylist'
+
+  match 'users/new' => 'users#new'
+
   unless Rails.application.config.consider_all_requests_local
       match '*not_found', to: 'users#redirect', :format => false
   end

@@ -2,8 +2,8 @@ class UsersController < ApplicationController
     # before_filter :skip_first_page, :only => :new
 
     def new
-        # @bodyId = 'home'
-        # @is_mobile = mobile_device?
+         @bodyId = 'home'
+         @is_mobile = mobile_device?
 
         @user = User.new
 
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
 
     def create
-       
+
         # Get user to see if they have already signed up
         @user = User.find_by_email(params[:user][:email]);
             
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
                 cur_ip.save
             end
 
-            @user = User.new(:email => params[:user][:email])
+            @user = User.new(:email => params[:user][:email],:user_type => params[:user][:user_type])
 
             @referred_by = User.find_by_referral_code(cookies[:h_ref])
 
@@ -87,6 +87,10 @@ class UsersController < ApplicationController
 
     def redirect
         redirect_to root_path, :status => 404
+    end
+
+    def stylist
+        @user = User.new
     end
 
     private 
