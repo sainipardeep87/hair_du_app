@@ -397,3 +397,30 @@ form.auth {
 .footer-holder ul a:hover {
   color: #716298;
 }
+.share-wrap .social-links .fb{
+  /*background: url(/assets/refer/fb.png);*/
+  background-size: 27px 27px;
+  width: 27px;
+  height: 27px;
+}
+
+.share-wrap .social-links .sep{
+  height: 28px;
+  width: 1px;
+  background: #BAB9BA;
+  margin: 0 20px;
+}
+
+.share-wrap .social-links .twit{
+    /*background: url(/assets/refer/twit@2x.png);*/
+    background-size: 27px 27px;
+  }
+
+  .share-wrap{
+  float: right;
+  width: 400px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  margin-right: 60px;
+}

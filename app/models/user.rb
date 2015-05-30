@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     validates :referral_code, :uniqueness => true
 
     before_create :create_referral_code
-    after_create :send_welcome_email
+    # after_create :send_welcome_email
 
     REFERRAL_STEPS = [
         {
@@ -52,8 +52,9 @@ class User < ActiveRecord::Base
     end
 
     def send_welcome_email
+        puts "sending email"
         require 'rest-client'
-        data = 'api_user=hairdu&api_key=coolfm02&to='+self.email+'&x-smtpapi={"filters": {"templates": {"settings": {"enable": 1,"template_id": "96082347-ef9b-4720-a0c9-a0186025de26"}}}}&subject=""&text=""&from=noreply@hairdu.com'
+        data = 'api_user=hairdu&api_key=coolfm02&to='+self.email+'&x-smtpapi={"filters": {"templates": {"settings": {"enable": 1,"template_id": "96082347-ef9b-4720-a0c9-a0186025de26"}}}}&subject='+root_url+'?ref='+self.referral_code+'&text=""&from=noreply@hairdu.com'
         res = RestClient.post 'https://api.sendgrid.com/api/mail.send.json',data
         # UserMailer.signup_email(self).deliver
     end

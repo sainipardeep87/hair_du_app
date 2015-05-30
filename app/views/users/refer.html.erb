@@ -3,10 +3,18 @@
     <section id="signup" class="container content-section">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-
+                <% twitter_message = "#hairduapp" %>
                 <h2>Thank You</h2>
                 <p>You are now subscribed</p>
                 <p>Your Referal code is <%= root_url %>?ref=<%= @user.referral_code %></p>
+                <div class="share-wrap">
+                 <div class="social-links">
+                    <a href="http://www.facebook.com/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Hairdu" class="fb" target="_blank">facebook</a>
+                    <div class="sep"></div>
+                    <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank">twitter</a>
+                </div>
+            </div>
+                
             </div>
         </div>
     </section>    

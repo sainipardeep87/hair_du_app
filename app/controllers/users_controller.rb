@@ -51,6 +51,7 @@ class UsersController < ApplicationController
             end
 
             @user.save
+            # send_welcome_email            
         end
 
         # Send them over refer action
@@ -65,6 +66,7 @@ class UsersController < ApplicationController
     end
 
     def refer
+        @skip_header = true
         email = cookies[:h_email]
 
         @bodyId = 'refer'
@@ -104,6 +106,14 @@ class UsersController < ApplicationController
                 cookies.delete :h_email
             end
         end
+    end
+
+    def send_welcome_email
+        puts "sending email"
+        require 'rest-client'
+        data = 'api_user=username&api_key=userpassword&to='+@user.email+'&x-smtpapi={"filters": {"templates": {"settings": {"enable": 1,"template_id": "7ad29389-c2c6-4498-b191-0efa1586fd7c"}}}}&subject='+root_url+'?ref='+@user.referral_code+'&text=""&from=noreply@hairdu.com'
+        res = RestClient.post 'https://api.sendgrid.com/api/mail.send.json',data
+        # UserMailer.signup_email(self).deliver
     end
 
 end
