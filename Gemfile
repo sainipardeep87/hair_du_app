@@ -11,6 +11,7 @@ gem 'activeadmin'
 gem 'execjs'
 gem 'therubyracer'
 gem "font-awesome-rails"
+gem "rest-client"
 
 # gem 'sendgrid-ruby'
 

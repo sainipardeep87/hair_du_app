@@ -16,6 +16,9 @@ Prelaunchr::Application.routes.draw do
 
   match 'users/new' => 'users#new'
 
+  match 'static_pages/about_us' => 'static_pages#about_us'
+  # resources :static_pages
+
   unless Rails.application.config.consider_all_requests_local
       match '*not_found', to: 'users#redirect', :format => false
   end
