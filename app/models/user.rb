@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
 
     def send_welcome_email
         require 'rest-client'
-        data = 'api_user=hairdu&api_key=coolfm02&to='+self.email+'&x-smtpapi={"filters": {"templates": {"settings": {"enable": 1,"template_id": "96082347-ef9b-4720-a0c9-a0186025de26"}}}}&subject=hello with template&text=""&from=sa@live.com'
+        data = 'api_user=hairdu&api_key=coolfm02&to='+self.email+'&x-smtpapi={"filters": {"templates": {"settings": {"enable": 1,"template_id": "96082347-ef9b-4720-a0c9-a0186025de26"}}}}&subject=""&text=""&from=noreply@hairdu.com'
         res = RestClient.post 'https://api.sendgrid.com/api/mail.send.json',data
         # UserMailer.signup_email(self).deliver
     end
