@@ -111,7 +111,7 @@ class UsersController < ApplicationController
     def send_welcome_email
         puts "sending email"
         require 'rest-client'
-        data = 'api_user=hairdu&api_key=Coolfm21&to='+@user.email+'&x-smtpapi={"filters": {"templates": {"settings": {"enable": 1,"template_id": "96082347-ef9b-4720-a0c9-a0186025de26"}}}}&subject=""&text='+root_url+'?ref='+@user.referral_code+'&from=noreply@hairdu.com'
+        data = 'api_user=user_name&api_key=user_password&to='+@user.email+'&x-smtpapi={"filters": {"templates": {"settings": {"enable": 1,"template_id": "96082347-ef9b-4720-a0c9-a0186025de26"}}}}&subject=""&text='+root_url+'?ref='+@user.referral_code+'&from=noreply@hairdu.com'
         res = RestClient.post 'https://api.sendgrid.com/api/mail.send.json',data
         # UserMailer.signup_email(self).deliver
     end
